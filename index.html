@@ -59,6 +59,7 @@ hello world
     
     <script>
         (function () {
+            var userAgent = navigator.userAgent.toLowerCase();
             if (userAgent.search("android") > -1)  {
                 alert(userAgent);
                 $('#printableArea').hide();
