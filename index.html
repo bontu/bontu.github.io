@@ -58,14 +58,14 @@ hello world
     </script>
     
     <script>
-        $(document).ready(function() {
+        (function() {
             if (!window.print) {
                 alert("notsupported!");
                 $('#printableArea').hide();
             } else {
                 alert("window print supported!");
             }
-        });
+        })();
         function printDiv(divName) {
             var printContents = document.getElementById(divName).innerHTML;
             var originalContents = document.body.innerHTML;
