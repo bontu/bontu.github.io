@@ -41,13 +41,33 @@ hello world
     <div id="gcpPrint"></div>
     <script src="https://www.google.com/cloudprint/client/cpgadget.js">
     </script>
+    
+    
+    <br/>
+    <div id="printableArea">
+      <h1>Print me</h1>
+</div>
 
-  <script>
+<input type="button" onclick="printDiv('printableArea')" value="print a div!" />
+    <script>
 
-      var gadget = new cloudprint.Gadget();
-      gadget.setPrintButton(cloudprint.Gadget.createDefaultPrintButton("gcpPrint"));
-      gadget.setPrintDocument("text/html", "Print", document.documentElement.innerHTML);
+        var gadget = new cloudprint.Gadget();
+        gadget.setPrintButton(cloudprint.Gadget.createDefaultPrintButton("gcpPrint"));
+        gadget.setPrintDocument("text/html", "Print", document.documentElement.innerHTML);
 
-  </script>
+    </script>
+    
+    <script>
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+
+            window.print();
+
+            document.body.innerHTML = originalContents;
+        }
+    </script>
 </body>
 </html>
