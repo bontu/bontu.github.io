@@ -60,9 +60,10 @@ hello world
     <script>
         $(document).ready(function() {
             if (!window.print) {
+                alert("notsupported!");
                 $('#printableArea').hide();
             } else {
-            
+                alert("window print supported!");
             }
         });
         function printDiv(divName) {
