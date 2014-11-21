@@ -58,6 +58,13 @@ hello world
     </script>
     
     <script>
+        $(document).ready(function() {
+            if (!window.print) {
+                $('#printableArea').hide();
+            } else {
+            
+            }
+        });
         function printDiv(divName) {
             var printContents = document.getElementById(divName).innerHTML;
             var originalContents = document.body.innerHTML;
