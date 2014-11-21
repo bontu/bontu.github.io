@@ -58,9 +58,9 @@ hello world
     </script>
     
     <script>
-        (function() {
-            if (!window.print) {
-                alert("notsupported!");
+        (function () {
+            if (userAgent.search("android") > -1)  {
+                alert(userAgent);
                 $('#printableArea').hide();
             } else {
                 alert("window print supported!");
