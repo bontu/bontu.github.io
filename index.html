@@ -66,6 +66,7 @@
     
         <script>
             (function () {
+                var i=0;
                 var userAgent = navigator.userAgent.toLowerCase();
                 if (userAgent.search("android") > -1)  {
                     //alert(userAgent);
@@ -75,12 +76,14 @@
                 }
 
                 $('[gd-currency]').each(function () {
+
                     var blockNextInputEvent;
                     var data = $(this).attr('gd-currency');
                     $(this).on('blur touchstart touchend click', function () {
 
                         setTimeout(function () {
-                            document.getElementById("test").innerHTML = "New text!";
+                            i++;
+                            document.getElementById("test").innerHTML = "New text!"+i;
                         }, 30);
                     }).on('keydown', function (evt) {
                         alert("be");
