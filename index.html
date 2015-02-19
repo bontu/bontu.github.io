@@ -1,116 +1,118 @@
 <!DOCTYPE html>
 <html>
-<body> 
-hello world
-<!--<iframe src="test.pdf" type="application/pdf" tabindex="5002">
-                    <param name='src' value='test.pdf'>
-                </iframe>-->
-<!--<object data="test.pdf", true))#view=fitH" type="application/pdf" width="618" height="155" tabindex="5002">
-                    <param name="src" value="test.pdf", true))">
-                    <param name="view" value="fitH" />
-                </object>
-               <br />
-    <br />
-    <object data="http://docs.google.com/gview?embedded=true&url=https://www.walmartmoneycard.com/walmart/CMSViews/walmart/assets/en-us/GD_Bank_WMT_Cardholder_Agmt_BASIC.pdf", true))#view=fitH" type="application/pdf" width="618" height="155" tabindex="5002">
-                    <param name="src" value="http://docs.google.com/gview?embedded=true&url=https://www.walmartmoneycard.com/walmart/CMSViews/walmart/assets/en-us/GD_Bank_WMT_Cardholder_Agmt_BASIC.pdf", true))">
-                    <param name="view" value="fitH" />
-                </object> -->
+    <head> <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    </head>
+    <body> 
+        hello world
+        <!--<iframe src="test.pdf" type="application/pdf" tabindex="5002">
+                <param name='src' value='test.pdf'>
+            </iframe>-->
+        <!--<object data="test.pdf", true))#view=fitH" type="application/pdf" width="618" height="155" tabindex="5002">
+                <param name="src" value="test.pdf", true))">
+                <param name="view" value="fitH" />
+            </object>
+            <br />
+            <br />
+            <object data="http://docs.google.com/gview?embedded=true&url=https://www.walmartmoneycard.com/walmart/CMSViews/walmart/assets/en-us/GD_Bank_WMT_Cardholder_Agmt_BASIC.pdf", true))#view=fitH" type="application/pdf" width="618" height="155" tabindex="5002">
+                <param name="src" value="http://docs.google.com/gview?embedded=true&url=https://www.walmartmoneycard.com/walmart/CMSViews/walmart/assets/en-us/GD_Bank_WMT_Cardholder_Agmt_BASIC.pdf", true))">
+                <param name="view" value="fitH" />
+            </object> -->
 
-    <br />
-    <br />
-    <!--   <a href="http://docs.google.com/gview?embedded=true&url=test.pdf"></a>
-    -->
-    <p>    
-        <a href="test.pdf">click me for pdf</a>
-    </p>
-    <a href="basic.pdf">click me for basic pdf</a>
+        <br />
+        <br />
+        <!--   <a href="http://docs.google.com/gview?embedded=true&url=test.pdf"></a>
+            -->
+        <p>    
+            <a href="test.pdf">click me for pdf</a>
+        </p>
+        <a href="basic.pdf">click me for basic pdf</a>
         <p>
-        <a href="/web/viewer.html">PDF.JS viewer</a>
-    </p>
-    <p>
-        <a href="/web/viewer.html?file=%2Fbasic.pdf">PDF.JS viewer with Basic</a>
-    </p>
+            <a href="/web/viewer.html">PDF.JS viewer</a>
+        </p>
+        <p>
+            <a href="/web/viewer.html?file=%2Fbasic.pdf">PDF.JS viewer with Basic</a>
+        </p>
     
     
         <div>
-        <p>On android devices (I have tested Nexus 5, Nexus 10, Galaxy S4 and Galaxy Tab 3) the window.print() command in javascript doesn't do anything, as far as I can tell it doesn't even register an error.</p>
-        <p>I know for a fact that most if not all of these browsers can print because you can use mobile chromes menu to choose "print".  My questions is, why doesn't window.print() trigger the behavior you would expect (opening the clients print menu).
-        And is there an android alternative to window.print()?</p>
-    </div>
+            <p>On android devices (I have tested Nexus 5, Nexus 10, Galaxy S4 and Galaxy Tab 3) the window.print() command in javascript doesn't do anything, as far as I can tell it doesn't even register an error.</p>
+            <p>I know for a fact that most if not all of these browsers can print because you can use mobile chromes menu to choose "print".  My questions is, why doesn't window.print() trigger the behavior you would expect (opening the clients print menu).
+                And is there an android alternative to window.print()?</p>
+        </div>
 
-    <div id="gcpPrint"></div>
-    <script src="https://www.google.com/cloudprint/client/cpgadget.js">
-    </script>
+        <div id="gcpPrint"></div>
+        <script src="https://www.google.com/cloudprint/client/cpgadget.js">
+        </script>
     
     
-    <br/>
-    <div id="printableArea">
-      <h1>Print me</h1>
-</div>
+        <br/>
+        <div id="printableArea">
+            <h1>Print me</h1>
+        </div>
 
-    <input type="button" onclick="printDiv('printableArea')" value="print a div!" />
+        <input type="button" onclick="printDiv('printableArea')" value="print a div!" />
     
-    <br/>
-    <input id="amount" gd-currency type="tel" maxlength="11"/> <button>yo</button>
-    <script>
+        <br/>
+        <input id="amount" gd-currency type="tel" maxlength="11"/> <button>yo</button>
+        <script>
 
-        var gadget = new cloudprint.Gadget();
-        gadget.setPrintButton(cloudprint.Gadget.createDefaultPrintButton("gcpPrint"));
-        gadget.setPrintDocument("text/html", "Print", document.documentElement.innerHTML);
+            var gadget = new cloudprint.Gadget();
+            gadget.setPrintButton(cloudprint.Gadget.createDefaultPrintButton("gcpPrint"));
+            gadget.setPrintDocument("text/html", "Print", document.documentElement.innerHTML);
 
-    </script>
+        </script>
     
-    <script>
-        (function () {
-            var userAgent = navigator.userAgent.toLowerCase();
-            if (userAgent.search("android") > -1)  {
-                //alert(userAgent);
-                $('#printableArea').hide();
-            } else {
-                //alert("window print supported!");
-            }
+        <script>
+            (function () {
+                var userAgent = navigator.userAgent.toLowerCase();
+                if (userAgent.search("android") > -1)  {
+                    //alert(userAgent);
+                    $('#printableArea').hide();
+                } else {
+                    //alert("window print supported!");
+                }
 
-            $('[gd-currency]').each(function () {
-                var blockNextInputEvent;
-                var data = $(this).attr('gd-currency');
-                $(this).on('blur touchstart touchend click', function () {
-                    var self = this;
-                    setTimeout(function () {
-                        alert("im");
-                        $(self).trigger("input");
-                    }, 30);
-                }).on('keydown', function (evt) {
-                    var self = this;
-                    if (evt.keyCode !== 8 && evt.keyCode !== 46) {
+                $('[gd-currency]').each(function () {
+                    var blockNextInputEvent;
+                    var data = $(this).attr('gd-currency');
+                    $(this).on('blur touchstart touchend click', function () {
+                        var self = this;
                         setTimeout(function () {
-                            alert("be");
+                            alert("im");
+                            $(self).trigger("input");
                         }, 30);
-                    } else if ($(self).val() !== '') {
-                        blockNextInputEvent = true;
-                    }
-                }).on('input', function (evt) {
-                    if (blockNextInputEvent) {
-                        evt.preventDefault();
-                        blockNextInputEvent = false;
-                        return;
-                    }
-                    var self = this;
-                    setTimeout(function () {
-                        alert("yo");
-                    }, 30);
+                    }).on('keydown', function (evt) {
+                        var self = this;
+                        if (evt.keyCode !== 8 && evt.keyCode !== 46) {
+                            setTimeout(function () {
+                                alert("be");
+                            }, 30);
+                        } else if ($(self).val() !== '') {
+                            blockNextInputEvent = true;
+                        }
+                    }).on('input', function (evt) {
+                        if (blockNextInputEvent) {
+                            evt.preventDefault();
+                            blockNextInputEvent = false;
+                            return;
+                        }
+                        var self = this;
+                        setTimeout(function () {
+                            alert("yo");
+                        }, 30);
+                    });
                 });
-            });
-        })();
-        function printDiv(divName) {
-            var printContents = document.getElementById(divName).innerHTML;
-            var originalContents = document.body.innerHTML;
+            })();
+            function printDiv(divName) {
+                var printContents = document.getElementById(divName).innerHTML;
+                var originalContents = document.body.innerHTML;
 
-            document.body.innerHTML = printContents;
+                document.body.innerHTML = printContents;
 
-            window.print();
+                window.print();
 
-            document.body.innerHTML = originalContents;
-        }
-    </script>
-</body>
+                document.body.innerHTML = originalContents;
+            }
+        </script>
+    </body>
 </html>
