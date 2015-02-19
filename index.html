@@ -76,27 +76,15 @@
                     var blockNextInputEvent;
                     var data = $(this).attr('gd-currency');
                     $(this).on('blur touchstart touchend click', function () {
-                        var self = this;
+
                         setTimeout(function () {
                             alert("im");
-                            $(self).trigger("input");
                         }, 30);
                     }).on('keydown', function (evt) {
-                        var self = this;
-                        if (evt.keyCode !== 8 && evt.keyCode !== 46) {
-                            setTimeout(function () {
-                                alert("be");
-                            }, 30);
-                        } else if ($(self).val() !== '') {
-                            blockNextInputEvent = true;
-                        }
+                        alert("be");
+
                     }).on('input', function (evt) {
-                        if (blockNextInputEvent) {
-                            evt.preventDefault();
-                            blockNextInputEvent = false;
-                            return;
-                        }
-                        var self = this;
+                        
                         setTimeout(function () {
                             alert("yo");
                         }, 30);
