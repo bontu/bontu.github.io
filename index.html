@@ -12,7 +12,7 @@
             iframe {
                 width: 100%;
             }
-            .modal {
+            .modaldiv {
                 display: none;
             }
             @media screen and (max-width:640px) {
@@ -74,7 +74,8 @@
         <div>(905) 523-4567</div>
         <div>(123)
             456-1112</div>
-        <div class="modal">
+        <div class="modal">click me</div>
+        <div class="modaldiv">
             <iframe src="/web/viewer.html?file=%2Fbasic.pdf" width="100%" height="400"></iframe>
         </div>
 
@@ -145,7 +146,7 @@
                 }
 
                 $('.modal').click(function () {
-                    $('.modal').show();
+                    $('.modaldiv').show();
                 });
                 $('[gd-currency]').each(function () {
 
