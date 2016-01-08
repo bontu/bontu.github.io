@@ -13,6 +13,10 @@
                 width: 100%;
             }
             .modaldiv {
+                width:500px;
+                height:400px;
+            }
+            .modaldiv {
                 display: none;
             }
             @media screen and (max-width:640px) {
@@ -146,7 +150,7 @@
                 }
 
                 $('.modal').click(function () {
-                    $('.modaldiv').show();
+                    $('.modaldiv').toggle();
                 });
                 $('[gd-currency]').each(function () {
 
