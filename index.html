@@ -205,8 +205,9 @@
             if (navigator.geolocation) {
 
                 navigator.geolocation.getCurrentPosition(function (position) {
+                    console.log("position: " + position);
                 });
-                console.log("position: " + position);
+                
             }
             else {
                 console.log("no supported");
