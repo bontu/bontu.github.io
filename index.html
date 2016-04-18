@@ -205,11 +205,9 @@
             if (navigator.geolocation) {
                 console.log("geo supported");
                 navigator.geolocation.getCurrentPosition(function (position) {
-                    var pos = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude
-                    };
-                    console.log(pos);
+
+                    console.log(position.coords.latitude);
+                    console.log(position.coords.longitude);
                 });
                 
             }
