@@ -198,7 +198,7 @@
         <br />
         <div id="long"></div>
         <br />
-        status <div id="stat"></div>
+        <div id="stat"></div>
         <!--<script>
 
             var gadget = new cloudprint.Gadget();
@@ -209,13 +209,10 @@
     
         <script language="Javascript">
             if (navigator.geolocation) {
-                console.log("geo supported");
-                document.getElementById("stat").innerHTML = "geo supported";
+                document.getElementById("stat").innerHTML = "status: geo supported";
                 navigator.geolocation.getCurrentPosition(function (position) {
-                    document.getElementById("lat").innerHTML = position.coords.latitude;
-                    document.getElementById("long").innerHTML = position.coords.longitude;
-                    console.log(position.coords.latitude);
-                    console.log(position.coords.longitude);
+                    document.getElementById("lat").innerHTML = "lat "+position.coords.latitude;
+                    document.getElementById("long").innerHTML = "long "+position.coords.longitude;
                 });
                 
             }
