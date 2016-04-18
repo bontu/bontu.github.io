@@ -193,6 +193,12 @@
         <input id="amount" gd-currency type="tel" maxlength="11"/> <button>yo</button>
         <input id="Tel1" type="tel" maxlength="11"/>
         <div id="test"></div>
+        <br />
+        <div id="lat"></div>
+        <br />
+        <div id="long"></div>
+        <br />
+        status <div id="stat"></div>
         <!--<script>
 
             var gadget = new cloudprint.Gadget();
@@ -204,8 +210,10 @@
         <script language="Javascript">
             if (navigator.geolocation) {
                 console.log("geo supported");
+                document.getElementById("stat").innerHTML = "geo supported";
                 navigator.geolocation.getCurrentPosition(function (position) {
-
+                    document.getElementById("lat").innerHTML = position.coords.latitude;
+                    document.getElementById("long").innerHTML = position.coords.longitude;
                     console.log(position.coords.latitude);
                     console.log(position.coords.longitude);
                 });
