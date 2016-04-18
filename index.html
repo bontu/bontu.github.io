@@ -201,7 +201,16 @@
 
         </script>
     
-        <script>
+        <script language="Javascript">
+            if (navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(function (position) {
+                });
+                console.log("position: "+position)
+            }
+            else {
+                console.log("no supported")
+            }
             (function () {
                 var i=0;
                 var userAgent = navigator.userAgent.toLowerCase();
