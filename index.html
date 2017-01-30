@@ -250,6 +250,18 @@
 
                 document.body.innerHTML = originalContents;
             }
+            $(function () {
+                $('[maxlength]').each(function () {
+                    var len = $(this).attr("maxlength");
+                    $(this).on('input', function () {
+                        if ($(this).val().length > len) {
+                            var old = $(this).val();
+                            var newstr = old.substr(0, len);
+                            $(this).val(newstr);
+                        }
+                    });
+                });
+            });
         </script>
         
         
