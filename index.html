@@ -6,6 +6,8 @@
     <link rel="icon" type="image/png" href="/pika48.png" sizes="48x48">
     <link rel="apple-touch-icon" href="/pika48.png">
     <link rel="apple-touch-icon" sizes="152x152" href="pika152.png">
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en|always"></script>
+
     </head>
     <body>
         <style>
@@ -59,6 +61,9 @@
                 width: 400px;
             }
         </style>
+        <script>
+  window.alert(window.Intl);
+        </script>
         maxlength test:<input type="text" name="test" maxlength="5" /><br />
         <div id="test"></div>
         <br />
