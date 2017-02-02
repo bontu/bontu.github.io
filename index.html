@@ -256,9 +256,9 @@
                 document.body.innerHTML = originalContents;
             }
             $(function () {
-                $('[maxlength]').each(function (e) {
+                $('[maxlength]').each(function () {
                     var len = $(this).attr("maxlength");
-                    $(this).on('input', function () {
+                    $(this).on('input', function (e) {
                         if ($(this).val().length > len) {
                             e.preventDefault();
                             return false;
