@@ -64,7 +64,7 @@
         <script>
   window.alert(window.Intl);
         </script>
-        maxlength test:<input type="text" name="test" maxlength="5" /><br />
+        maxlength test:<input type="text" name="test" maxlength="5" android:inputType="textFilter"/><br />
         <div id="test"></div>
         <br />
         <div id="lat"></div>
@@ -255,17 +255,14 @@
 
                 document.body.innerHTML = originalContents;
             }
-            $(function () {
-                $('[maxlength]').each(function () {
-                    var len = $(this).attr("maxlength");
-                    $(this).on('input', function (e) {
-                        if ($(this).val().length > len) {
-                            e.preventDefault();
-                            return false;
-                        }
-                    });
-                });
+            $('input[maxlength]').on('keydown', function (event) {
+                var $this = $(this);
+                var len = $(this).attr("maxlength");
+                if ($this.val().length > len) {
+                    event.preventDefault();
+                }
             });
+           
         </script>
         
         
