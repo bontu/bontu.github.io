@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" href="/pika48.png" sizes="48x48">
     <link rel="apple-touch-icon" href="/pika48.png">
     <link rel="apple-touch-icon" sizes="152x152" href="pika152.png">
-       
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en|always"></script>
 
     </head>
     <body>
@@ -256,13 +256,12 @@
                 document.body.innerHTML = originalContents;
             }
             $(function () {
-                $('[maxlength]').each(function () {
+                $('[maxlength]').each(function (e) {
                     var len = $(this).attr("maxlength");
                     $(this).on('input', function () {
                         if ($(this).val().length > len) {
-                            var old = $(this).val();
-                            var newstr = old.substr(0, len);
-                            $(this).val(newstr);
+                            e.preventDefault();
+                            return false;
                         }
                     });
                 });
