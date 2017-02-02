@@ -255,11 +255,12 @@
 
                 document.body.innerHTML = originalContents;
             }
-            $('input[maxlength]').on('keydown', function (event) {
+            $('input[maxlength]').on('keyup', function (event) {
                 var $this = $(this);
                 var len = $(this).attr("maxlength");
                 if ($this.val().length > len) {
                     event.preventDefault();
+                    $(this).val($(this).val().substr(0, len));
                 }
             });
            
