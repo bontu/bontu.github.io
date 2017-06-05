@@ -7,9 +7,14 @@
     <link rel="apple-touch-icon" href="/pika48.png">
     <link rel="apple-touch-icon" sizes="152x152" href="pika152.png">
         <!--<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en|always"></script>-->
-
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script>
+            function onSubmit(token) {
+                document.getElementById("demo-form").submit();
+            }
+        </script>
     </head>
-    <body>
+    <body onpageshow="myFunction(event)">
         <style>
             iframe {
                 width: 100%;
@@ -271,15 +276,19 @@
         
         
         <br/><br/>
-        <!--<object data="https://www.walmartmoneycard.com/CMSViews/walmart/assets/en-us/GD_Bank_WMT_Cardholder_Agmt_BASIC.pdf" type="application/pdf" width="618" height="155" tabindex="5002">
+    <!--<object data="https://www.walmartmoneycard.com/CMSViews/walmart/assets/en-us/GD_Bank_WMT_Cardholder_Agmt_BASIC.pdf" type="application/pdf" width="618" height="155" tabindex="5002">
             
-        </object>
+    </object>
         
-        <object data="basic.pdf" type="application/pdf" width="618" height="155" tabindex="502">
+    <object data="basic.pdf" type="application/pdf" width="618" height="155" tabindex="502">
                 
-        </object>
+    </object>
         
-        PDF IFrame
-        <iframe height="900" width="100%"  src="https://www.walmartmoneycard.com/CMSViews/walmart/assets/en-us/GD_Bank_WMT_Cardholder_Agmt_BASIC.pdf" id="didsplayPDF"></iframe>-->
+    PDF IFrame
+    <iframe height="900" width="100%"  src="https://www.walmartmoneycard.com/CMSViews/walmart/assets/en-us/GD_Bank_WMT_Cardholder_Agmt_BASIC.pdf" id="didsplayPDF"></iframe>-->
+    <form id='demo-form' action="?" method="POST">
+        <button class="g-recaptcha" data-sitekey="your_site_key" data-callback='onSubmit'>Submit</button>
+        <br/>
+    </form>
     </body>
 </html>
