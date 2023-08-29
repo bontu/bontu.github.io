@@ -86,8 +86,18 @@
             .test2 {
                 width: 400px;
             }
-        </style>
+            input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+        </style>
+num test:<input type="number" name="test" maxlength="4"/><br />
         maxlength test:<input type="text" name="test" maxlength="5" android:inputType="textFilter"/><br />
         <div id="test"></div>
         <br />
